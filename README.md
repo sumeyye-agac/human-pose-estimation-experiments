@@ -54,12 +54,14 @@ This repo provides a small but production-minded scaffold for:
 Current snapshot is generated from `results/benchmark.csv` and rendered in [`results/benchmark.md`](./results/benchmark.md).
 Numbers are shown only when a tool is actually measured in the current runtime.
 
+<!-- RESULTS_SNAPSHOT_START -->
 | Tool | Status | Avg ms/frame | FPS |
 | --- | --- | --- | --- |
-| MediaPipe | not_measured | - | - |
-| Detectron2 | not_measured | - | - |
-| OpenPose | not_measured | - | - |
-| AlphaPose | not_measured | - | - |
+| mediapipe | not_measured | - | - |
+| detectron2 | not_measured | - | - |
+| openpose | not_measured | - | - |
+| alphapose | not_measured | - | - |
+<!-- RESULTS_SNAPSHOT_END -->
 
 ## Quick start
 

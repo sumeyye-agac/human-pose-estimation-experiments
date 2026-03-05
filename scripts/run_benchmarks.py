@@ -34,6 +34,8 @@ CSV_COLUMNS = [
     "notes",
     "raw_json",
 ]
+README_SNAPSHOT_START = "<!-- RESULTS_SNAPSHOT_START -->"
+README_SNAPSHOT_END = "<!-- RESULTS_SNAPSHOT_END -->"
 
 
 class MediaPipeBackend:
@@ -120,6 +122,35 @@ def _generate_markdown(rows: list[dict[str, Any]], out_path: Path) -> None:
     out_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def _snapshot_lines(rows: list[dict[str, Any]]) -> list[str]:
+    lines = [
+        "| Tool | Status | Avg ms/frame | FPS |",
+        "| --- | --- | --- | --- |",
+    ]
+    for row in rows:
+        avg_ms = row.get("avg_ms_per_frame")
+        fps = row.get("fps")
+        avg_ms_str = f"{avg_ms:.2f}" if isinstance(avg_ms, (float, int)) else "-"
+        fps_str = f"{fps:.2f}" if isinstance(fps, (float, int)) else "-"
+        lines.append(f"| {row['tool']} | {row['status']} | {avg_ms_str} | {fps_str} |")
+    return lines
+
+
+def _update_readme_snapshot(rows: list[dict[str, Any]], readme_path: Path) -> None:
+    if not readme_path.exists():
+        return
+
+    text = readme_path.read_text(encoding="utf-8")
+    if README_SNAPSHOT_START not in text or README_SNAPSHOT_END not in text:
+        return
+
+    start_idx = text.index(README_SNAPSHOT_START) + len(README_SNAPSHOT_START)
+    end_idx = text.index(README_SNAPSHOT_END)
+    snapshot = "\n" + "\n".join(_snapshot_lines(rows)) + "\n"
+    updated = text[:start_idx] + snapshot + text[end_idx:]
+    readme_path.write_text(updated, encoding="utf-8")
+
+
 def _write_csv(rows: list[dict[str, Any]], out_path: Path, config: BenchmarkConfig) -> None:
     with out_path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
@@ -201,6 +232,7 @@ def main() -> None:
     _write_csv(rows=rows, out_path=output_dir / "benchmark.csv", config=config)
     _generate_markdown(rows=rows, out_path=output_dir / "benchmark.md")
     write_json(environment, output_dir / "environment.json")
+    _update_readme_snapshot(rows=rows, readme_path=Path("README.md"))
 
     measured = [row for row in rows if row.get("status") == "measured"]
     print(f"Wrote {output_dir / 'benchmark.csv'}")
