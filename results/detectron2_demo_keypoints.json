@@ -1,0 +1,96 @@
+[
+  {
+    "frame_index": 0,
+    "timestamp_ms": 0.0,
+    "person_id": 0,
+    "tool": "detectron2",
+    "schema": "coco17",
+    "keypoints": {
+      "nose": {
+        "x": 312.83563232421875,
+        "y": 315.2115478515625,
+        "confidence": 0.6805447340011597
+      },
+      "left_eye": {
+        "x": 330.7453918457031,
+        "y": 267.2181701660156,
+        "confidence": 0.9061433672904968
+      },
+      "right_eye": {
+        "x": 265.5026550292969,
+        "y": 264.01861572265625,
+        "confidence": 1.0355510711669922
+      },
+      "left_ear": {
+        "x": 356.9704284667969,
+        "y": 269.7778015136719,
+        "confidence": 0.20595936477184296
+      },
+      "right_ear": {
+        "x": 193.22393798828125,
+        "y": 271.0576171875,
+        "confidence": 0.17702186107635498
+      },
+      "left_shoulder": {
+        "x": 331.3850402832031,
+        "y": 424.6363830566406,
+        "confidence": 0.17297324538230896
+      },
+      "right_shoulder": {
+        "x": null,
+        "y": null,
+        "confidence": 0.04928279668092728
+      },
+      "left_elbow": {
+        "x": null,
+        "y": null,
+        "confidence": 0.034388571977615356
+      },
+      "right_elbow": {
+        "x": 104.95437622070312,
+        "y": 502.0656433105469,
+        "confidence": 0.11245332658290863
+      },
+      "left_wrist": {
+        "x": null,
+        "y": null,
+        "confidence": 0.05795177072286606
+      },
+      "right_wrist": {
+        "x": null,
+        "y": null,
+        "confidence": 0.07634110748767853
+      },
+      "left_hip": {
+        "x": null,
+        "y": null,
+        "confidence": 0.020321665331721306
+      },
+      "right_hip": {
+        "x": null,
+        "y": null,
+        "confidence": 0.025169648230075836
+      },
+      "left_knee": {
+        "x": null,
+        "y": null,
+        "confidence": 0.09327216446399689
+      },
+      "right_knee": {
+        "x": null,
+        "y": null,
+        "confidence": 0.06838607043027878
+      },
+      "left_ankle": {
+        "x": null,
+        "y": null,
+        "confidence": 0.07192006707191467
+      },
+      "right_ankle": {
+        "x": null,
+        "y": null,
+        "confidence": 0.026325969025492668
+      }
+    }
+  }
+]

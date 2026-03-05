@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "rows": 48,
+    "tool": "mediapipe",
+    "used_synthetic_fallback": false,
+    "missing_rate_overall": 0.8333333333333333,
+    "mean_confidence": 0.1358131543532306,
+    "confidence_std": 0.31286915724994274,
+    "mean_temporal_jitter_px": 37.13590345257923
+  },
+  "missing_rate_per_keypoint": {
+    "nose": 0.8333333333333334,
+    "left_eye": 0.8333333333333334,
+    "right_eye": 0.8333333333333334,
+    "left_ear": 0.8333333333333334,
+    "right_ear": 0.8333333333333334,
+    "left_shoulder": 0.8333333333333334,
+    "right_shoulder": 0.8333333333333334,
+    "left_elbow": 0.8333333333333334,
+    "right_elbow": 0.8333333333333334,
+    "left_wrist": 0.8333333333333334,
+    "right_wrist": 0.8333333333333334,
+    "left_hip": 0.8333333333333334,
+    "right_hip": 0.8333333333333334,
+    "left_knee": 0.8333333333333334,
+    "right_knee": 0.8333333333333334,
+    "left_ankle": 0.8333333333333334,
+    "right_ankle": 0.8333333333333334
+  },
+  "jitter_per_keypoint": {
+    "nose": 29.100978441995352,
+    "left_eye": 34.25000321033298,
+    "right_eye": 33.94364841961842,
+    "left_ear": 30.107988555060572,
+    "right_ear": 32.347466799425405,
+    "left_shoulder": 11.628068196136942,
+    "right_shoulder": 19.256418648567642,
+    "left_elbow": 20.00197024250156,
+    "right_elbow": 19.67573073401068,
+    "left_wrist": 65.1258706647988,
+    "right_wrist": 31.063302159339077,
+    "left_hip": 11.014508488189184,
+    "right_hip": 17.562710273635357,
+    "left_knee": 52.922209966800814,
+    "right_knee": 41.49239416316488,
+    "left_ankle": 98.06026520352442,
+    "right_ankle": 83.75682452674482
+  }
+}
