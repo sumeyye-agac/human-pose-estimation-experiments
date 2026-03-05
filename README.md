@@ -57,7 +57,7 @@ Numbers are shown only when a tool is actually measured in the current runtime.
 <!-- RESULTS_SNAPSHOT_START -->
 | Tool | Status | Avg ms/frame | FPS |
 | --- | --- | --- | --- |
-| mediapipe | not_measured | - | - |
+| mediapipe | measured | 7.35 | 135.97 |
 | detectron2 | not_measured | - | - |
 | openpose | not_measured | - | - |
 | alphapose | not_measured | - | - |

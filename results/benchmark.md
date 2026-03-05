@@ -5,7 +5,7 @@ Only rows with `status=measured` contain numeric latency/FPS values.
 
 | Tool | Status | Avg ms/frame | FPS | Notes |
 | --- | --- | --- | --- | --- |
-| mediapipe | not_measured | - | - | mediapipe import/setup failed: No module named 'mediapipe' |
+| mediapipe | measured | 7.35 | 135.97 | Synthetic single-frame benchmark. Inference only. |
 | detectron2 | not_measured | - | - | Use Detectron2 notebook to install model zoo weights before benchmark. |
 | openpose | not_measured | - | - | Use OpenPose notebook (recommended and fallback setup cells). |
 | alphapose | not_measured | - | - | Use AlphaPose notebook (recommended and fallback setup cells). |
