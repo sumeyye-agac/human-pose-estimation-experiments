@@ -7,8 +7,6 @@
 
 This repository is a practical benchmark and analysis workspace for MediaPipe, OpenPose, AlphaPose, and Detectron2. It gives one consistent pipeline for cross-framework comparison, canonical keypoint export, and motion-signal analysis with reproducible artifacts.
 
-![Pipeline overview](./assets/pipeline_overview.svg)
-
 ## What this repo focuses on
 
 - Running multiple pose frameworks with one benchmark contract.
