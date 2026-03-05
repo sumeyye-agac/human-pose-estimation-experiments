@@ -57,11 +57,16 @@ Numbers are shown only when a tool is actually measured in the current runtime.
 <!-- RESULTS_SNAPSHOT_START -->
 | Tool | Status | Avg ms/frame | FPS |
 | --- | --- | --- | --- |
-| mediapipe | measured | 7.35 | 135.97 |
-| detectron2 | not_measured | - | - |
-| openpose | not_measured | - | - |
+| mediapipe | measured | 7.70 | 129.88 |
+| detectron2 | measured | 1018.91 | 0.98 |
+| openpose | measured | 429.43 | 2.33 |
 | alphapose | not_measured | - | - |
 <!-- RESULTS_SNAPSHOT_END -->
+
+Notes for this snapshot:
+
+- `openpose` is measured with the official COCO OpenPose Caffe model executed through OpenCV DNN.
+- `alphapose` remains `not_measured` on this machine because the official build path requires CUDA custom ops.
 
 ## Quick start
 
@@ -100,9 +105,11 @@ Generated files:
 
 Method details are in [`docs/benchmark_methodology.md`](./docs/benchmark_methodology.md).
 
+For the current measured snapshot on macOS arm64, the command was executed in a `conda` environment with `python=3.10`, `detectron2=0.6`, `mediapipe=0.10.14`, and CPU inference.
+
 ## OpenPose and AlphaPose setup reality
 
-OpenPose and AlphaPose often break on clean Colab sessions due build/CUDA constraints.
+OpenPose and AlphaPose can break on clean Colab or local sessions due build/CUDA constraints.
 Their notebooks include:
 
 - A recommended path for ready environments

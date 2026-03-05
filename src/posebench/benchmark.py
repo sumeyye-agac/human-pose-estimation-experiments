@@ -9,7 +9,7 @@ import platform
 import subprocess
 import time
 from collections.abc import Iterable
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -102,7 +102,7 @@ def _probe_gpu_name() -> str | None:
 
 def collect_environment() -> dict[str, Any]:
     return {
-        "captured_at_utc": datetime.now(UTC).isoformat(),
+        "captured_at_utc": datetime.now(timezone.utc).isoformat(),
         "python_version": platform.python_version(),
         "platform": platform.platform(),
         "machine": platform.machine(),

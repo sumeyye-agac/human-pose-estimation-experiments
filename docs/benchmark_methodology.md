@@ -30,4 +30,14 @@ Generated artifacts:
 
 ## Notes on tool readiness
 
-OpenPose, AlphaPose, and Detectron2 often require model weights or custom build steps in Colab. The benchmark runner marks these as `not_measured` until their notebook setup path is completed.
+- Detectron2 can be measured on macOS arm64 via conda-forge `detectron2` CPU builds.
+- OpenPose can be measured via OpenCV DNN using the official COCO Caffe model weights.
+- AlphaPose currently requires CUDA-dependent custom ops in the official install path; on non-CUDA environments it is expected to remain `not_measured`.
+
+## Exact environment used for current snapshot (March 6, 2026)
+
+```bash
+conda create -y -n posebench-d2 -c conda-forge python=3.10 detectron2
+conda run -n posebench-d2 python -m pip install mediapipe==0.10.14 opencv-python-headless "setuptools<81"
+conda run -n posebench-d2 python scripts/run_benchmarks.py --tool all --frames 30 --warmup 5 --repeat 1
+```

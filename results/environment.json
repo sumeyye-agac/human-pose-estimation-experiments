@@ -1,22 +1,22 @@
 {
-  "captured_at_utc": "2026-03-05T20:30:42.668331+00:00",
-  "python_version": "3.11.5",
+  "captured_at_utc": "2026-03-05T21:55:08.726109+00:00",
+  "python_version": "3.10.20",
   "platform": "macOS-14.1-arm64-arm-64bit",
   "machine": "arm64",
   "processor": "arm",
   "gpu_name": null,
   "library_versions": {
-    "numpy": "1.26.4",
-    "pandas": "2.2.3",
-    "scipy": "1.11.4",
+    "numpy": "2.2.6",
+    "pandas": null,
+    "scipy": "1.15.3",
     "opencv-python": null,
     "mediapipe": "0.10.14",
     "torch": "2.10.0",
-    "detectron2": null
+    "detectron2": "0.6"
   },
   "benchmark_config": {
-    "warmup_frames": 12,
-    "measured_frames": 60,
+    "warmup_frames": 5,
+    "measured_frames": 30,
     "repeat": 1,
     "include_decode": false
   },

@@ -12,6 +12,7 @@ __pycache__/
 # Virtual environments
 .venv/
 .venv-nb/
+.venv-bench/
 venv/
 
 # OS files
@@ -24,6 +25,7 @@ results/benchmark_raw_*.json
 assets/generated/
 assets/sample_input_*.jpg
 assets/sample_input_*.mp4
+.cache/
 
 # Logs
 *.log
