@@ -5,6 +5,8 @@
 [![Status](https://img.shields.io/badge/Status-Actively%20Maintained-1f6feb)](./.github/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
+> Note: This repository is under active development. Results and notebook flows are updated as new benchmark runs are completed.
+
 This repository is a practical benchmark and analysis workspace for MediaPipe, OpenPose, AlphaPose, and Detectron2. It gives one consistent pipeline for cross-framework comparison, canonical keypoint export, and motion-signal analysis with reproducible artifacts.
 
 ## What this repo focuses on
