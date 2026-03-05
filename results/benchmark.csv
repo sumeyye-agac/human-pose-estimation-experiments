@@ -1,0 +1,5 @@
+tool,status,avg_ms_per_frame,std_ms_per_frame,fps,measured_frames,warmup_frames,repeat,include_decode,notes,raw_json
+mediapipe,not_measured,,,,30,5,1,False,mediapipe import/setup failed: No module named 'mediapipe',
+detectron2,not_measured,,,,30,5,1,False,Use Detectron2 notebook to install model zoo weights before benchmark.,
+openpose,not_measured,,,,30,5,1,False,Use OpenPose notebook (recommended and fallback setup cells).,
+alphapose,not_measured,,,,30,5,1,False,Use AlphaPose notebook (recommended and fallback setup cells).,

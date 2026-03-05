@@ -1,0 +1,29 @@
+{
+  "captured_at_utc": "2026-03-05T00:34:54.740575+00:00",
+  "python_version": "3.11.5",
+  "platform": "macOS-14.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "gpu_name": null,
+  "library_versions": {
+    "numpy": "1.24.3",
+    "pandas": "2.0.3",
+    "scipy": "1.11.1",
+    "opencv-python": null,
+    "mediapipe": null,
+    "torch": "2.10.0",
+    "detectron2": null
+  },
+  "benchmark_config": {
+    "warmup_frames": 5,
+    "measured_frames": 30,
+    "repeat": 1,
+    "include_decode": false
+  },
+  "input": {
+    "kind": "synthetic_random_frame",
+    "width": 640,
+    "height": 480,
+    "seed": 13
+  }
+}
