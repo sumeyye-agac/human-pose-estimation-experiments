@@ -1,6 +1,8 @@
-# Canonical Keypoint Schema
+# Canonical Schema
 
-This repository standardizes all framework outputs to the **COCO-17** canonical schema. The mapping lives in `src/posebench/keypoints_schema.py`.
+This project maps all framework outputs to a canonical **COCO-17 subset** so that exports and features are comparable across tools.
+
+The mapping logic is implemented in `src/posebench/keypoints_schema.py`.
 
 ## Canonical keypoint order
 
@@ -24,21 +26,37 @@ This repository standardizes all framework outputs to the **COCO-17** canonical 
 | 15 | left_ankle |
 | 16 | right_ankle |
 
-## CSV export format
+## Skeleton topology
 
-Frame-level exports are produced by `posebench.export` with stable columns:
+Canonical edges are stored in `CANONICAL_EDGES` and used by `posebench.viz` for overlay rendering.
 
-- `frame_index`
-- `timestamp_ms`
-- `person_id`
-- `tool`
-- `schema`
-- For each keypoint, three columns: `{name}_x`, `{name}_y`, `{name}_confidence`
+Representative links:
 
-## Mapping coverage
+- upper body: shoulders, elbows, wrists
+- lower body: hips, knees, ankles
+- torso connectors: shoulder-hip and hip-hip links
+- face anchors: nose-eye-ear links
 
-- MediaPipe BlazePose (33 landmarks) -> canonical subset via index mapping.
-- OpenPose BODY_25 -> canonical subset via index mapping.
-- AlphaPose COCO-17 -> one-to-one mapping.
-- Detectron2 COCO keypoints -> one-to-one mapping.
+## Framework mapping coverage
 
+- MediaPipe BlazePose (33 landmarks) to COCO-17 subset via index mapping.
+- OpenPose BODY_25 to COCO-17 subset via index mapping.
+- AlphaPose COCO-17 to canonical one-to-one mapping.
+- Detectron2 COCO keypoints to canonical one-to-one mapping.
+
+## CSV contract
+
+`posebench.export.canonical_csv_columns()` defines a stable export contract:
+
+- metadata columns
+  - `frame_index`
+  - `timestamp_ms`
+  - `person_id`
+  - `tool`
+  - `schema`
+- per-keypoint columns
+  - `{name}_x`
+  - `{name}_y`
+  - `{name}_confidence`
+
+Every row is frame-level and uses the canonical schema, regardless of source framework.

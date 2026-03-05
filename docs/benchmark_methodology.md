@@ -1,24 +1,27 @@
 # Benchmark Methodology
 
-This project measures latency and FPS using `scripts/run_benchmarks.py`.
+This repository measures pose inference latency with `scripts/run_benchmarks.py` and writes artifacts under `results/`.
 
 ## Measurement protocol
 
-- Warm-up runs execute first to avoid first-call overhead bias.
-- Measured runs record per-frame latency with `time.perf_counter()`.
+- Warm-up runs execute first to reduce first-call overhead bias.
+- Measured runs use `time.perf_counter()` per frame.
 - Reported metrics include `avg_ms_per_frame`, `std_ms_per_frame`, and `fps`.
-- Inference timing excludes video decode by default (`include_decode=false`).
+- Timing is inference-only by default (`include_decode=false`).
 
-## Input and runtime settings
+## Input and runtime defaults
 
-- Default input is a deterministic synthetic RGB frame.
-- Defaults: `warmup=20`, `frames=90`, `repeat=3`.
-- Environment metadata is saved to `results/environment.json`.
+- Input is a deterministic synthetic RGB frame.
+- Default benchmark settings:
+  - `warmup=20`
+  - `frames=90`
+  - `repeat=3`
+- Environment metadata is captured in `results/environment.json`.
 
 ## Reproducing results
 
 ```bash
-PYTHONPATH=src python scripts/run_benchmarks.py --tool all
+python scripts/run_benchmarks.py --tool all
 ```
 
 Generated artifacts:
@@ -28,16 +31,11 @@ Generated artifacts:
 - `results/environment.json`
 - `results/benchmark_raw_<tool>.json` for measured tools
 
-## Notes on tool readiness
+The README snapshot block is auto-updated from `results/benchmark.csv` by the same script.
 
-- Detectron2 can be measured on macOS arm64 via conda-forge `detectron2` CPU builds.
-- OpenPose can be measured via OpenCV DNN using the official COCO Caffe model weights.
-- AlphaPose currently requires CUDA-dependent custom ops in the official install path; on non-CUDA environments it is expected to remain `not_measured`.
+## Framework-specific notes
 
-## Exact environment used for current snapshot (March 6, 2026)
-
-```bash
-conda create -y -n posebench-d2 -c conda-forge python=3.10 detectron2
-conda run -n posebench-d2 python -m pip install mediapipe==0.10.14 opencv-python-headless "setuptools<81"
-conda run -n posebench-d2 python scripts/run_benchmarks.py --tool all --frames 30 --warmup 5 --repeat 1
-```
+- MediaPipe is typically the easiest measured path with `pip`.
+- Detectron2 support depends on runtime and install channel. This repo uses best-effort adapter loading.
+- OpenPose measurement uses the official COCO Caffe model executed via OpenCV DNN.
+- AlphaPose official path requires CUDA custom ops; unsupported runtimes remain `not_measured`.
