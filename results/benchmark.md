@@ -5,7 +5,7 @@ Only rows with `status=measured` contain numeric latency/FPS values.
 
 | Tool | Status | Avg ms/frame | Std ms/frame | FPS | Notes |
 | --- | --- | --- | --- | --- | --- |
-| mediapipe | measured | 7.58 | 0.07 | 131.88 | Synthetic single-frame benchmark. Inference only. |
-| detectron2 | measured | 1032.95 | 44.01 | 0.97 | Synthetic single-frame benchmark. Inference only. |
-| openpose | measured | 428.36 | 8.36 | 2.33 | Synthetic single-frame benchmark. Inference only. OpenPose COCO model executed via OpenCV DNN. |
+| mediapipe | measured | 7.41 | 0.16 | 134.95 | Synthetic single-frame benchmark. Inference only. |
+| detectron2 | measured | 1033.24 | 47.56 | 0.97 | Synthetic single-frame benchmark. Inference only. |
+| openpose | measured | 429.79 | 5.90 | 2.33 | Synthetic single-frame benchmark. Inference only. OpenPose COCO model executed via OpenCV DNN. |
 | alphapose | not_measured | - | - | - | AlphaPose official install requires CUDA custom ops (CUDA_HOME). This macOS arm64 CPU environment is unsupported. |

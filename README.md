@@ -67,9 +67,9 @@ Generated from `results/benchmark.csv`. Only measured tools contain numbers.
 <!-- BENCHMARK_SNAPSHOT_START -->
 | Tool | Status | Avg ms/frame | Std ms/frame | FPS |
 | --- | --- | --- | --- | --- |
-| mediapipe | measured | 7.58 | 0.07 | 131.88 |
-| detectron2 | measured | 1032.95 | 44.01 | 0.97 |
-| openpose | measured | 428.36 | 8.36 | 2.33 |
+| mediapipe | measured | 7.41 | 0.16 | 134.95 |
+| detectron2 | measured | 1033.24 | 47.56 | 0.97 |
+| openpose | measured | 429.79 | 5.90 | 2.33 |
 | alphapose | not_measured | - | - | - |
 <!-- BENCHMARK_SNAPSHOT_END -->
 

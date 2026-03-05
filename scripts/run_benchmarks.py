@@ -283,7 +283,7 @@ def _update_readme_snapshot(rows: list[dict[str, Any]], readme_path: Path) -> No
 
 def _write_csv(rows: list[dict[str, Any]], out_path: Path, config: BenchmarkConfig) -> None:
     with out_path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
+        writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             enriched = {
