@@ -51,9 +51,11 @@ _TOOL_ALIASES = {
     "coco": "alphapose",
     "mmpose": "alphapose",
     "d2": "detectron2",
+    "openpose_coco18": "openpose_coco",
+    "coco18": "openpose_coco",
 }
 
-SUPPORTED_TOOLS = ("mediapipe", "openpose", "alphapose", "detectron2")
+SUPPORTED_TOOLS = ("mediapipe", "openpose", "openpose_coco", "alphapose", "detectron2")
 
 # Canonical index -> tool index
 _TOOL_INDEX_MAPS: dict[str, dict[int, int]] = {
@@ -94,6 +96,27 @@ _TOOL_INDEX_MAPS: dict[str, dict[int, int]] = {
         14: 10,
         15: 14,
         16: 11,
+    },
+    # OpenPose COCO model (`pose_deploy_linevec.prototxt`) emits 18 parts in a
+    # different order than BODY_25: neck is index 1 and the leg block starts at 8.
+    "openpose_coco": {
+        0: 0,
+        1: 15,
+        2: 14,
+        3: 17,
+        4: 16,
+        5: 5,
+        6: 2,
+        7: 6,
+        8: 3,
+        9: 7,
+        10: 4,
+        11: 11,
+        12: 8,
+        13: 12,
+        14: 9,
+        15: 13,
+        16: 10,
     },
     "alphapose": {idx: idx for idx in range(17)},
     "detectron2": {idx: idx for idx in range(17)},

@@ -39,10 +39,20 @@ Representative links:
 
 ## Framework mapping coverage
 
-- MediaPipe BlazePose (33 landmarks) to COCO-17 subset via index mapping.
-- OpenPose BODY_25 to COCO-17 subset via index mapping.
-- AlphaPose COCO-17 to canonical one-to-one mapping.
-- Detectron2 COCO keypoints to canonical one-to-one mapping.
+- MediaPipe BlazePose (33 landmarks) to COCO-17 subset via index mapping (`mediapipe`).
+- OpenPose BODY_25 (25 parts) to COCO-17 subset via index mapping (`openpose`).
+- OpenPose COCO model (18 parts) to COCO-17 subset via index mapping (`openpose_coco`).
+- AlphaPose COCO-17 to canonical one-to-one mapping (`alphapose`).
+- Detectron2 COCO keypoints to canonical one-to-one mapping (`detectron2`).
+
+### OpenPose has two output layouts
+
+`pose_deploy_linevec.prototxt` (the COCO model used by the OpenCV DNN path in this
+repository) emits **18** parts, while the native `pyopenpose` default emits **25**.
+The two orderings differ: BODY_25 inserts `mid_hip` at index 8 and shifts the whole
+leg and face block, so reusing the BODY_25 map on COCO output silently swaps hips,
+knees, ankles, eyes, and ears. Pass `openpose_coco` for 18-part output and
+`openpose` for BODY_25 output.
 
 ## CSV contract
 

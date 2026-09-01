@@ -25,6 +25,7 @@ results/benchmark_raw_*.json
 assets/generated/
 assets/sample_input_*.jpg
 assets/sample_input_*.mp4
+assets/pose_demo_full_body.jpg
 .cache/
 
 # Logs

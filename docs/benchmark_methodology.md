@@ -37,5 +37,16 @@ The README snapshot block is auto-updated from `results/benchmark.csv` by the sa
 
 - MediaPipe is typically the easiest measured path with `pip`.
 - Detectron2 support depends on runtime and install channel. This repo uses best-effort adapter loading.
-- OpenPose measurement uses the official COCO Caffe model executed via OpenCV DNN.
+- OpenPose measurement uses the official COCO Caffe model executed via OpenCV DNN, not the
+  native `pyopenpose` runtime, so its latency is not comparable to published OpenPose numbers.
 - AlphaPose official path requires CUDA custom ops; unsupported runtimes remain `not_measured`.
+
+## Latency benchmark vs. demo inference
+
+Two different inputs are in play and they should not be confused:
+
+- `scripts/run_benchmarks.py` (this document) times a deterministic **synthetic** frame so the
+  numbers stay reproducible and independent of image content.
+- The per-tool notebooks run **real** inference on `assets/pose_demo_full_body.jpg` and write
+  `results/<tool>_demo_keypoints.csv`. Their mini benchmarks measure that single real frame and
+  are written to `results/benchmark_raw_<tool>_demo.json`, separate from the table above.

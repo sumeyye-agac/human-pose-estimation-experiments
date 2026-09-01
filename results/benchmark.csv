@@ -1,5 +1,5 @@
 tool,status,avg_ms_per_frame,std_ms_per_frame,fps,measured_frames,warmup_frames,repeat,include_decode,notes,raw_json
-mediapipe,measured,7.410195842385292,0.15967465381171833,134.9491998956544,60,12,1,False,Synthetic single-frame benchmark. Inference only.,results/benchmark_raw_mediapipe.json
-detectron2,measured,1033.2437409631286,47.56160503859851,0.9678258482048575,60,12,1,False,Synthetic single-frame benchmark. Inference only.,results/benchmark_raw_detectron2.json
-openpose,measured,429.7949221994107,5.898698126346525,2.3266910527529054,60,12,1,False,Synthetic single-frame benchmark. Inference only. OpenPose COCO model executed via OpenCV DNN.,results/benchmark_raw_openpose.json
+mediapipe,measured,8.089953435895344,0.1597071281767487,123.61010578416591,60,12,1,False,Synthetic single-frame benchmark. Inference only.,results/benchmark_raw_mediapipe.json
+detectron2,measured,1244.152356973306,148.28175640016195,0.8037600816291791,60,12,1,False,Synthetic single-frame benchmark. Inference only.,results/benchmark_raw_detectron2.json
+openpose,measured,494.0140674181748,76.53237400936817,2.0242338547689904,60,12,1,False,Synthetic single-frame benchmark. Inference only. OpenPose COCO model executed via OpenCV DNN.,results/benchmark_raw_openpose.json
 alphapose,not_measured,,,,60,12,1,False,AlphaPose official install requires CUDA custom ops (CUDA_HOME). This macOS arm64 CPU environment is unsupported.,
